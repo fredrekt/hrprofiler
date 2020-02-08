@@ -20,12 +20,12 @@ public class IndexController {
 	
 //Onboarding 
 	
-	@RequestMapping(value ="/onboarding", method = RequestMethod.GET)
+	@RequestMapping(value ="/employee", method = RequestMethod.GET)
 	public String onBoard() {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/onboard", method = RequestMethod.GET)
+	@RequestMapping(value = "/onboarding", method = RequestMethod.GET)
 	public String SetUpBoard(){
 		return "onboarding";
 	}
