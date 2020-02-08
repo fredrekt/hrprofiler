@@ -20,6 +20,22 @@
 	<!-- Bootstrap Stepper -->
 	<link href="https://cdn.jsdelivr.net/npm/bs-stepper/dist/css/bs-stepper.min.css" rel="stylesheet">
 	
+	
+<!--  MDB CDN STARTS -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="http://localhost:8020/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="http://localhost:8020/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="http://localhost:8020/css/style.css">
+  
+<!-- MDB CDN ENDS -->
+
 	   <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Lexend+Deca|Montserrat:400,700|Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
@@ -27,7 +43,7 @@
 <body>
 	<!-- Nav Starts -->
 	<nav class="navbar navbar-dark bg-dark">
-	   <a class="navbar-brand" href="#">Alliance</a>
+	   <a class="navbar-brand" href="/employee">ALLIANCE</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -75,7 +91,7 @@
     </div>
     <div class="line"></div>
     <div class="step" data-target="#information-part">
-      <button onclick="showStepFour()" type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
+      <button onclick="show4()" type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
         <span class="bs-stepper-circle">4</span>
         <span class="bs-stepper-label">Deployment/Operation</span>
       </button>
@@ -83,7 +99,7 @@
   </div>
   <div class="bs-stepper-content">
     <!-- your steps content here -->
-    <div id="step1-content">
+    <div class="step1-content" id="step1-content">
     	<div class="container">
 		    <h3 class="content-header mt-3">
 		    Training and Orientation
@@ -95,7 +111,7 @@
 			  <option value="2">Data Security Training</option>
 			  <option value="3">Company Fresh Hire Orientation</option>
 			</select>
-			<button onclick="showStepTwo()" class="btn btn-primary btn-sm pl-2 mt-3">Next</button>
+			<button onclick="showStepTwo()" class="btn btn-primary btn-sm mt-3">Next</button>
 			
 	    </div>
     </div>
@@ -109,7 +125,7 @@
 		    
 	    </div>
 	    <div class="button-com-id">
-	    	<button onclick="printID()" class="btn btn-primary btn-sm pl-2 mt-3">Next</button>
+	    	<button onclick="printID()" class="btn btn-primary btn-sm">Next</button>
 	    </div>
     </div>
     <div class="margin-container-2" id="step3-content">
@@ -122,7 +138,7 @@
 		    </p>
 	    </div>
 	    <div class="container">
-	    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+		<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 		  <li class="nav-item">
 		    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
 		      aria-controls="pills-home" aria-selected="true"><img title="Banco De Oro" src="https://broadstonesolis.com/wp-content/uploads/parser/unauthorized-transactions-on-debit-card-1.png" width="280" height="190"></a>
@@ -136,103 +152,161 @@
 		      aria-controls="pills-contact" aria-selected="false"><img title="Bank of the Philippine Islands" width="290" height="180" src="https://www.bpicards.com/images/p/a524142e-Debit%20EMV%20Cirrus_Red_283x178px.png"></a>
 		  </li>
 		</ul>
-			<div class="tab-content pt-2 pl-1 mb-3" id="pills-tabContent">
-			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">	  
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-				Choosing the right bank for the employees.<strong class="content-subh">
-				 You have selected RCBC Bank </strong>
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				    <span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-			  <p>
-			  The Rizal Commercial Banking Corporation was established in 1960 as a development bank and is licensed by the Bangko Sentral ng Pilipinas for both commercial and investment banking.
-			   It is one of the largest universal banks in the Philippines with total consolidated resources of Php 645 billion as of end-2018
-			  </p>
-			  	<div class="row">		
-			  		<div class="col">
-			  		 <label for="">Cardholder's Name</label>
-						<input name="cardname" required class="form-control form-control-sm" type="text" placeholder="Ex: John Doe Garingo">
+		</div>
+		<div class="container">
+			<div class="tab-content pt-2 pl-1" id="pills-tabContent">
+			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+				  <div class="container">
+				  
+				  	<div class="alert alert-warning alert-dismissible fade show animated bounceInUp" role="alert">
+					  <strong>You have selected Rizal Commercial Banking Corporation </strong>
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
 					</div>
-					<div class="col">
-					 <label for="">Card Number</label>
-						<input name="cardnum" required class="form-control form-control-sm" type="text" placeholder="Ex: 1234 5678 9101">
-					</div>			
-				</div>
-					<!-- Default unchecked -->
-					<div class="mt-3 mb-3">
-						<div class="custom-control custom-checkbox">
-						    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-						    <label class="custom-control-label" for="defaultUnchecked">Are the details correct?</label>
+					
+					  <p>
+					  The Rizal Commercial Banking Corporation was established in 1960 as a development bank and is licensed by the Bangko Sentral ng Pilipinas for both commercial and investment banking.
+					   It is one of the largest universal banks in the Philippines with total consolidated resources of Php 645 billion as of end-2018
+					  </p>
+							
+					  <div class="row">
+					  	<div class="col-md-6">
+						  	<div class="md-form">
+							  <input type="text" name="cardname" id="form1" class="form-control">
+							  <label for="form1">Cardholder's Name</label>
+							</div>
 						</div>
+						
+						<div class="col-md-6">
+						  	<div class="md-form">
+							  <input type="text" name="cardnum" id="form1" class="form-control">
+							  <label for="form1">Cardholder's Number</label>
+							</div>
+						</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="md-form">
+								  <input type="text" name="emp-address" id="form1" class="form-control">
+								  <label for="form1">Street Address &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Barangay &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Block No. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  Building Number</label>
+								</div>
+							</div>
+						</div>
+						
+						  <!-- Default unchecked -->
+			              <div class="custom-control custom-checkbox mt-3">
+			                  <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+			                  <label class="custom-control-label" for="defaultUnchecked">Are you sure the details are correct?</label>
+			              </div>
+			              <button class="btn btn-primary btn-sm mt-3">Next</button>
+						
 					</div>
-			  </div>
+			    </div>
 			  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-			  <div class="alert alert-primary alert-dismissible fade show" role="alert">
-				Choosing the right bank for the employees.<strong class="content-subh">
-				 You have selected Paypal </strong>
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				    <span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<p>
-				PayPal Holdings Inc. is an American company operating a worldwide online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods like checks and money orders.
-				</p>
-			  	<div class="row">		
-			  		<div class="col">
-			  		 <label for="">Cardholder's Name</label>
-						<input name="cardname" required class="form-control form-control-sm" type="text" placeholder="Ex: John Doe Garingo">
+			   <div class="container">
+				  
+				  	<div class="alert alert-primary alert-dismissible fade show animated bounceInUp" role="alert">
+					  <strong> You have selected Paypal!</strong>
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
 					</div>
-					<div class="col">
-					 <label for="">Card Number</label>
-						<input name="cardnum" required class="form-control form-control-sm" type="text" placeholder="Ex: 1234 5678 9101">
-					</div>			
-				</div>
-					<!-- Default unchecked -->
-					<div class="mt-3 mb-3">
-						<div class="custom-control custom-checkbox">
-						    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-						    <label class="custom-control-label" for="defaultUnchecked">Are the details correct?</label>
+					
+					<p>
+					PayPal Holdings Inc. is an American company operating a worldwide online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods like checks and money orders.
+					</p>
+								
+					  <div class="row">
+					  	<div class="col-md-6">
+						  	<div class="md-form">
+							  <input type="text" name="cardname" id="form1" class="form-control">
+							  <label for="form1">Cardholder's Name</label>
+							</div>
 						</div>
-					</div>  
+						
+						<div class="col-md-6">
+						  	<div class="md-form">
+							  <input type="text" name="cardnum" id="form1" class="form-control">
+							  <label for="form1">Cardholder's Number</label>
+							</div>
+						</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="md-form">
+								  <input type="text" name="emp-address" id="form1" class="form-control">
+								  <label for="form1">Street Address &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Barangay &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Block No. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  Building Number</label>
+								</div>
+							</div>
+						</div>
+						
+						  <!-- Default unchecked -->
+			              <div class="custom-control custom-checkbox mt-3">
+			                  <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+			                  <label class="custom-control-label" for="defaultUnchecked">Are you sure the details are correct?</label>
+			              </div>
+			              <button class="btn btn-primary btn-sm mt-3">Next</button>
+						
+					</div>
 			  </div>
 			  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-			  				<div class="alert alert-danger alert-dismissible fade show" role="alert">
-				Choosing the right bank for the employees.<strong class="content-subh">
-				 You have selected Bank of the Philippines Islands </strong>
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				    <span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<p>
-				Bank of the Philippine Islands is a universal bank in the Philippines. It is the first bank in both the Philippines and Southeast Asia. It is the fourth largest bank in terms of assets, the second largest bank in terms of market capitalization, and one of the most profitable banks in the Philippines.
-				</p>
-			  	<div class="row">		
-			  		<div class="col">
-			  		 <label for="">Cardholder's Name</label>
-						<input name="cardname" required class="form-control form-control-sm" type="text" placeholder="Ex: John Doe Garingo">
+			   <div class="container">
+				  
+				  	<div class="alert alert-danger alert-dismissible fade show animated bounceInUp" role="alert">
+					  <strong> You have selected Bank of the Philippines Islands! </strong>
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
 					</div>
-					<div class="col">
-					 <label for="">Card Number</label>
-						<input name="cardnum" required class="form-control form-control-sm" type="text" placeholder="Ex: 1234 5678 9101">
-					</div>			
-				</div>
-					<!-- Default unchecked -->
-					<div class="mt-3 mb-3">
-						<div class="custom-control custom-checkbox">
-						    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-						    <label class="custom-control-label" for="defaultUnchecked">Are the details correct?</label>
+					
+					 <p>
+					Bank of the Philippine Islands is a universal bank in the Philippines. It is the first bank in both the Philippines and Southeast Asia. It is the fourth largest bank in terms of assets, the second largest bank in terms of market capitalization, and one of the most profitable banks in the Philippines.
+					</p>
+							
+					  <div class="row">
+					  	<div class="col-md-6">
+						  	<div class="md-form">
+							  <input type="text" name="cardname" id="form1" class="form-control">
+							  <label for="form1">Cardholder's Name</label>
+							</div>
 						</div>
+						
+						<div class="col-md-6">
+						  	<div class="md-form">
+							  <input type="text" name="cardnum" id="form1" class="form-control">
+							  <label for="form1">Cardholder's Number</label>
+							</div>
+						</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div class="md-form">
+								  <input type="text" name="emp-address" id="form1" class="form-control">
+								  <label for="form1">Street Address &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; City &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Barangay &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Block No. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  Building Number</label>
+								</div>
+							</div>
+						</div>
+						
+						  <!-- Default unchecked -->
+			              <div class="custom-control custom-checkbox mt-3">
+			                  <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+			                  <label class="custom-control-label" for="defaultUnchecked">Are you sure the details are correct?</label>
+			              </div>
+			              <button class="btn btn-primary btn-sm mt-3">Next</button>
+						
 					</div>
 			   
 			   </div>
+			</div> 
+			</div>
+			  </div>
 			</div>
 	    </div>
-	    <div class="button-com-id">
-	    	<button class="btn btn-primary btn-sm">Next</button>
-	    </div>
-    </div>
-    <div id="step4-content">
+    <div id="stepfour-content">
     	<div class="container">
 		    <h3 class="content-header mt-3">
 		    Deployment to Operations
@@ -257,15 +331,79 @@
   </div>
 </div>
 		
+
 <!-- Footer Starts -->
-	<div class="footer-container">
-		<nav class="navbar fixed-bottom navbar-dark bg-dark">
-			<div class="footer-center">
-		   		<a class="footer-center" href="#">Alliance 2019 <span>&#9400;</span></a>
-		   	</div>
-		</nav>
-	</div>
-<!-- Footer Ends -->
+<footer class="page-footer font-small elegant-color pt-4">
+
+  <!-- Footer Text -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+          repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+          harum esse fugiat. Itaque, culpa?</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mb-md-0 mb-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
+          commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
+          excepturi hic.</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Text -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3"><a href="https://mdbootstrap.com/education/bootstrap/"> Alliance </a> Copyright 2020 ©  
+    
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer Ends-->
+	
+	
+   <!-- MDB - localhost -->
+  <script type="text/javascript" src="http://localhost:8020/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="http://localhost:8020/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="http://localhost:8020/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="http://localhost:8020/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+
+  <!-- End MDB localhost -->
+	<script>
+		function show4(){
+			document.getElementById("step1-content").style.display = "none";
+			document.getElementById("step2-content").style.display = "none";
+			document.getElementById("step3-content").style.display = "none";
+			document.getElementById("stepfour-content").style.display = "inline";
+			}
+	</script>
+
 	<!-- Custom Javascript by fred -->
 	<script type="text/javascript" src="/js/main.js"></script>
 	<!-- JQuery -->
