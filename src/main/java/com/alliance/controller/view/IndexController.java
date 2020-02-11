@@ -17,18 +17,7 @@ public class IndexController {
 	
 	@Autowired
 	private CustomerService customerService;
-	
-//Onboarding 
-	
-	@RequestMapping(value ="/employee", method = RequestMethod.GET)
-	public String onBoard() {
-		return "index";
-	}
-	
-	@RequestMapping(value = "/onboarding", method = RequestMethod.GET)
-	public String SetUpBoard(){
-		return "onboarding";
-	}
+
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String getCustomerList(ModelMap map, CustomerSearchFilter searchFilter) {
