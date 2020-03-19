@@ -68,22 +68,22 @@
 	<div class="bs-stepper">
   <div class="bs-stepper-header" role="tablist">
     <!-- your steps here -->
-    <div id="add-active-class-1" class="step1 active" data-target="#logins-part">
+    <div id="add-active-class-1" class="step1 complet" data-target="#logins-part">
       <button onclick="showStepOneB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num1-b" class="bs-stepper-circle">1</span>
+        <span id="bs-num1-b" class="fas fa-check-circle fa-2x text-success"></span>
         <span class="bs-stepper-label">Employee Date Validation</span>
       </button>
     </div>
     <div class="line"></div>
     <div id="add-active-class-2" class="step1" data-target="#logins-part">
       <button onclick="showStepTwoB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num2-b" class="bs-stepper-circle">2</span>
+        <span id="bs-num2-b" class="fas fa-check-circle fa-2x text-success"></span>
         <span class="bs-stepper-label">Employee Information</span>
       </button>
     </div>
     <div class="line"></div>
-    <div id="add-active-class-3" class="step1" data-target="#logins-part">
-      <button onclick="showStepOne()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+    <div id="add-active-class-3" class="step1 active" data-target="#logins-part">
+      <button onclick="showStepOne()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
         <span id="bs-num1" class="bs-stepper-circle">3</span>
         <span class="bs-stepper-label">Training & Orientation</span>
       </button>
@@ -143,9 +143,11 @@
     <!-- SMTP CONTENT IDENTIFICATION STARTS -->
     <div style="display:none" class="step1-content" id="smtp2-content">
     	<div class="container">
+    		<form method="get" action="/send-mail2">
 		    <h3 class="content-header mt-3">
 		    Employee Identification Processing
 		    </h3>
+		    <input type="text" hidden name="EmpID" value="${empid }"/>
 		    <p class="grey-text">Onboarding process will be sent to the department</p>
 		  	<div style="margin-left:5%">
 		  		<img src="data:image/png;base64,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">
@@ -159,8 +161,8 @@
 		    Hoping for you kind consideration!
 		    </p>
 		    
-			<button onclick="sendEmailIdentification()" class="btn btn-primary btn-sm mt-3">Next</button>
-			
+			<button type="submit" class="btn btn-primary btn-sm mt-3">Next</button>
+			</form>
 	    </div>
     </div>
     <!-- SMTP CONTENT IDENTIFICATION ENDS -->
@@ -217,7 +219,7 @@
     
     
     <!-- baet feature steps starts -->
-     <div style="" class="step1-content" id="stepb-1-content">
+     <div style="display:none" class="step1-content" id="stepb-1-content">
     	<div class="container">
 		    <h3 class="content-header mt-3">
 		    Employee Validation
@@ -737,20 +739,28 @@
     </div>
     <!-- baet feature steps end -->
     
-    <div style="display:none" class="step1-content" id="step1-content">
+    <div style="display:inline" class="step1-content" id="step1-content">
     	<div class="container">
+    	<form action="/training-orientation" method="get">
 		    <h3 class="content-header mt-3">
 		    Training and Orientation
 		    </h3>
+		    <input name="EmpID" type="text" value="${EmpID}" hidden/>
 		    <p class="content-sub-h mt-3 grey-text">Choose training for the employee</p>
-		    <select class="browser-default custom-select">
-			  <option selected>Developers Orientation</option>
-			  <option value="1">Project Manager Training</option>
-			  <option value="2">Data Security Training</option>
-			  <option value="3">Company Fresh Hire Orientation</option>
+		    <select name="empTraining" class="browser-default custom-select mb-2">
+			  <option value="Developers Orientation"selected>Developers Orientation</option>
+			  <option value="Project Manager Training">Project Manager Training</option>
+			  <option value="Data Security Training">Data Security Training</option>
+			  <option value="Company Fresh Hire Orientation">Company Fresh Hire Orientation</option>
 			</select>
-			<button onclick="showStepTwo()" class="btn btn-primary btn-sm mt-3">Next</button>
 			
+			<button type="submit" 
+			class="btn btn-success btn-sm mt-2 mb-2">
+				Assign training
+			</button>
+			<br/>		
+			</form>
+			<button onclick="sendEmailID()" class="btn btn-primary btn-sm mt-3">Next</button>
 	    </div>
     </div>
     <div style="display:none" id="step2-content">
@@ -1031,6 +1041,9 @@
 </footer>
 <!-- Footer Ends-->
 	
+	<script>
+	window.alert("Note: Email status that has been sent has been approved! Employee can now be prepared for training and orientation!")
+	</script>
 	
    <!-- MDB - localhost -->
   <script type="text/javascript" src="http://localhost:8020/js/jquery.min.js"></script>

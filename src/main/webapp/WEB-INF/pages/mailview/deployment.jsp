@@ -68,42 +68,42 @@
 	<div class="bs-stepper">
   <div class="bs-stepper-header" role="tablist">
     <!-- your steps here -->
-    <div id="add-active-class-1" class="step1 active" data-target="#logins-part">
-      <button onclick="showStepOneB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num1-b" class="bs-stepper-circle">1</span>
+    <div id="add-active-class-1" class="step1 complet" data-target="#logins-part">
+      <button disabled onclick="showStepOneB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+        <span id="bs-num1-b" class="fas fa-check-circle fa-2x text-success"></span>
         <span class="bs-stepper-label">Employee Date Validation</span>
       </button>
     </div>
     <div class="line"></div>
     <div id="add-active-class-2" class="step1" data-target="#logins-part">
-      <button onclick="showStepTwoB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num2-b" class="bs-stepper-circle">2</span>
+      <button disabled onclick="showStepTwoB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+        <span id="bs-num2-b" class="fas fa-check-circle fa-2x text-success"></span>
         <span class="bs-stepper-label">Employee Information</span>
       </button>
     </div>
     <div class="line"></div>
     <div id="add-active-class-3" class="step1" data-target="#logins-part">
-      <button onclick="showStepOne()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num1" class="bs-stepper-circle">3</span>
+      <button disabled onclick="showStepOne()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+        <span id="bs-num1" class="fas fa-check-circle text-success fa-2x"></span>
         <span class="bs-stepper-label">Training & Orientation</span>
       </button>
     </div>
     <div class="line"></div>
-    <div id="add-active-class-4" class="step" data-target="#logins-part">
-      <button onclick="showStepTwo()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num2" class="bs-stepper-circle">4</span>
+    <div id="add-active-class-4" class="step " data-target="#logins-part">
+      <button onclick="showStepTwo()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="bankBtn">
+        <span id="bs-num2" class="fas fa-check-circle text-success fa-2x"></span>
         <span class="bs-stepper-label">Identification</span>
       </button>
     </div>
     <div class="line"></div>
     <div id="add-active-class-5" class="step" data-target="#logins-part">
-      <button onclick="showStepThree()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num3" class="bs-stepper-circle">5</span>
+      <button onclick="showSmtpThree()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+        <span id="bs-num3" class="fas fa-check-circle text-success fa-2x"></span>
         <span class="bs-stepper-label">Bank Account</span>
       </button>
     </div>
     <div class="line"></div>
-    <div id="add-active-class-6" class="step" data-target="#information-part">
+    <div id="add-active-class-6" class="step active" data-target="#information-part">
       <button onclick="showStepFour()" type="button" class="step-trigger" role="tab" aria-controls="information-part" id="information-part-trigger">
         <span id="bs-num4" class="bs-stepper-circle">6</span>
         <span class="bs-stepper-label">Deployment/Operation</span>
@@ -143,6 +143,7 @@
     <!-- SMTP CONTENT IDENTIFICATION STARTS -->
     <div style="display:none" class="step1-content" id="smtp2-content">
     	<div class="container">
+    		<form action="/send-mail2">
 		    <h3 class="content-header mt-3">
 		    Employee Identification Processing
 		    </h3>
@@ -159,8 +160,8 @@
 		    Hoping for you kind consideration!
 		    </p>
 		    
-			<button onclick="sendEmailIdentification()" class="btn btn-primary btn-sm mt-3">Next</button>
-			
+			<button type="submit" class="btn btn-primary btn-sm mt-3">Next</button>
+			</form>
 	    </div>
     </div>
     <!-- SMTP CONTENT IDENTIFICATION ENDS -->
@@ -168,6 +169,7 @@
      <!-- SMTP CONTENT BANK STARTS -->
     <div style="display:none" class="step1-content" id="smtp3-content">
     	<div class="container">
+    	<form action="/send-mail-successful">
 		    <h3 class="content-header mt-3">
 		    Employee Bank Assistance Processing
 		    </h3>
@@ -184,8 +186,8 @@
 		    Hoping for you kind consideration!
 		    </p>
 		    
-			<button onclick="sendEmailBank()" class="btn btn-primary btn-sm mt-3">Next</button>
-			
+			<button type="submit" class="btn btn-primary btn-sm mt-3">Next</button>
+			</form>
 	    </div>
     </div>
     <!-- SMTP CONTENT BANK ENDS -->
@@ -217,7 +219,7 @@
     
     
     <!-- baet feature steps starts -->
-     <div style="" class="step1-content" id="stepb-1-content">
+     <div style="display:none" class="step1-content" id="stepb-1-content">
     	<div class="container">
 		    <h3 class="content-header mt-3">
 		    Employee Validation
@@ -749,7 +751,7 @@
 			  <option value="2">Data Security Training</option>
 			  <option value="3">Company Fresh Hire Orientation</option>
 			</select>
-			<button onclick="showStepTwo()" class="btn btn-primary btn-sm mt-3">Next</button>
+			<button onclick="sendEmailID()" class="btn btn-primary btn-sm mt-3">Next</button>
 			
 	    </div>
     </div>
@@ -949,7 +951,7 @@
 			  </div>
 			</div>
 	    </div>
-    <div style="display:none" id="stepfour-content">
+    <div style="display:inline" id="stepfour-content">
     	<div class="container">
 		    <h3 class="content-header mt-3">
 		    Deployment to Operations
@@ -1031,6 +1033,9 @@
 </footer>
 <!-- Footer Ends-->
 	
+	<script>
+	window.alert("Note: Employee Successfully Onboarded! Employee may now proceed to Deployment to Operations")
+	</script>
 	
    <!-- MDB - localhost -->
   <script type="text/javascript" src="http://localhost:8020/js/jquery.min.js"></script>

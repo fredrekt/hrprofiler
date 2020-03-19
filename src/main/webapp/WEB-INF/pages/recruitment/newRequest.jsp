@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -5,7 +6,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
 <title>Onboarding</title>
 <!-- Custom CSS by fred -->
 	<link rel="stylesheet" href="http://localhost:8020/css/main.css"/>
@@ -68,14 +68,14 @@
 	<div class="bs-stepper">
   <div class="bs-stepper-header" role="tablist">
     <!-- your steps here -->
-    <div id="add-active-class-1" class="step1 active" data-target="#logins-part">
+    <div id="add-active-class-1" class="step1 complete" data-target="#logins-part">
       <button onclick="showStepOneB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
-        <span id="bs-num1-b" class="bs-stepper-circle">1</span>
+        <span id="bs-num1-b" class="fas fa-check-circle fa-2x text-success"></span>
         <span class="bs-stepper-label">Employee Date Validation</span>
       </button>
     </div>
     <div class="line"></div>
-    <div id="add-active-class-2" class="step1" data-target="#logins-part">
+    <div id="add-active-class-2" class="step1 active" data-target="#logins-part">
       <button onclick="showStepTwoB()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
         <span id="bs-num2-b" class="bs-stepper-circle">2</span>
         <span class="bs-stepper-label">Employee Information</span>
@@ -83,21 +83,21 @@
     </div>
     <div class="line"></div>
     <div id="add-active-class-3" class="step1" data-target="#logins-part">
-      <button onclick="showStepOne()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+      <button onclick="showStepOne()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
         <span id="bs-num1" class="bs-stepper-circle">3</span>
         <span class="bs-stepper-label">Training & Orientation</span>
       </button>
     </div>
     <div class="line"></div>
     <div id="add-active-class-4" class="step" data-target="#logins-part">
-      <button onclick="showStepTwo()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+      <button onclick="showStepTwo()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
         <span id="bs-num2" class="bs-stepper-circle">4</span>
         <span class="bs-stepper-label">Identification</span>
       </button>
     </div>
     <div class="line"></div>
     <div id="add-active-class-5" class="step" data-target="#logins-part">
-      <button onclick="showStepThree()" type="button" class="disabled step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
+      <button onclick="showStepThree()" type="button" class="step-trigger" role="tab" aria-controls="logins-part" id="logins-part-trigger">
         <span id="bs-num3" class="bs-stepper-circle">5</span>
         <span class="bs-stepper-label">Bank Account</span>
       </button>
@@ -113,126 +113,16 @@
   <div class="bs-stepper-content">
     <!-- your steps content here -->
     
-    
-    <!-- SMTP CONTENT TRAINING AND ORIENTATION STARTS -->
-    <div style="display:none" class="step1-content" id="smtp1-content">
-    	<div class="container">
-    	<form action="/send-mail">
-		    <h3 class="content-header mt-3">
-		    Employee Onboading Processing
-		    </h3>
-		    <p class="grey-text">Onboarding process will be sent to the department</p>
-		  	<div style="margin-left:5%">
-		  		<img src="data:image/png;base64,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">
-		    </div>
-		    <p class="content-sub-h mt-3">
-		    Employee details are being sent to the Training and Orientation Department. Please be patient with us for
-		    a moment;<br/> while we sort this out. After this you will receive a confirmation letter from the department
-		    to assign the employee to <br/> his or her training and orientation.
-		    <br/>
-		    <br/>
-		    Hoping for you kind consideration!
-		    </p>
-		    <button type="submit" class="btn btn-primary btn-sm mt-3">next</button>
-			</form>
-			
-	    </div>
-    </div>
-    <!-- SMTP CONTENT TRAINING AND ORIENTATION ENDS -->
-    
-    <!-- SMTP CONTENT IDENTIFICATION STARTS -->
-    <div style="display:none" class="step1-content" id="smtp2-content">
-    	<div class="container">
-		    <h3 class="content-header mt-3">
-		    Employee Identification Processing
-		    </h3>
-		    <p class="grey-text">Onboarding process will be sent to the department</p>
-		  	<div style="margin-left:5%">
-		  		<img src="data:image/png;base64,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">
-		    </div>
-		    <p class="content-sub-h mt-3">
-		    Employee details are being sent to the Identification Printing Department. Please be patient with us for
-		    a moment;<br/> while we sort this out. After this you will receive a confirmation letter from the department
-		    that the employee's <br/> identification card is done printing and is now ready to use.
-		    <br/>
-		    <br/>
-		    Hoping for you kind consideration!
-		    </p>
-		    
-			<button onclick="sendEmailIdentification()" class="btn btn-primary btn-sm mt-3">Next</button>
-			
-	    </div>
-    </div>
-    <!-- SMTP CONTENT IDENTIFICATION ENDS -->
-    
-     <!-- SMTP CONTENT BANK STARTS -->
-    <div style="display:none" class="step1-content" id="smtp3-content">
-    	<div class="container">
-		    <h3 class="content-header mt-3">
-		    Employee Bank Assistance Processing
-		    </h3>
-		    <p class="grey-text">Onboarding process will be sent to the department</p>
-		  	<div style="margin-left:5%">
-		  		<img src="data:image/png;base64,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">
-		    </div>
-		    <p class="content-sub-h mt-3">
-		    Employee details are being sent to the Accounting Department. Please be patient with us for
-		    a moment;<br/> while we sort this out. After this you will receive a confirmation letter from the department
-		    that the employee's <br/> bank account is already done and is now ready to use for withdrawal of salary.
-		    <br/>
-		    <br/>
-		    Hoping for you kind consideration!
-		    </p>
-		    
-			<button onclick="sendEmailBank()" class="btn btn-primary btn-sm mt-3">Next</button>
-			
-	    </div>
-    </div>
-    <!-- SMTP CONTENT BANK ENDS -->
-    
-     <!-- SMTP CONTENT DEPLOYMENT STARTS -->
-    <div style="display:none" class="step1-content" id="smtp4-content">
-    	<div class="container">
-		    <h3 class="content-header mt-3">
-		    Employee Deployment Processing
-		    </h3>
-		    <p class="grey-text">The Onboarding process is now at its finishing touches</p>
-		  	<div style="margin-left:5%">
-		  		<img src="data:image/png;base64,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">
-		    </div>
-		    <p class="content-sub-h mt-3">
-		    Employee details are now complete and is now ready. Thank you for being patient with us along
-		   	the way;<br/> while we sorted this out. After this you will receive a confirmation letter from the company
-		    that the employee <br/> is now being deployed to his or her respective fields or work.
-		    <br/>
-		    <br/>
-		    God bless to the newly hired employee!
-		    </p>
-		    
-			<button onclick="sendEmailDeployment()" class="btn btn-primary btn-sm mt-3">Next</button>
-			
-	    </div>
-    </div>
-    <!-- SMTP CONTENT DEPLOYMENT ENDS -->
-    
-    
     <!-- baet feature steps starts -->
-     <div style="" class="step1-content" id="stepb-1-content">
+     <div style="display:none" class="step1-content" id="stepb-1-content">
     	<div class="container">
 		    <h3 class="content-header mt-3">
 		    Employee Validation
 		    </h3>
 		    <p class="content-sub-h mt-3 grey-text">This is where the admin fills out the necessary dates for the employee 	</p>
 		    
-		    <form method="post" action="/recruitment/add">
+		    <form method="get" action="/recruitment/add">
 				<table>
-				<tr>
-					<label for="exampleForm2">ERF Number</label>
-					<input style="width:30%" type="text" 
-					id="exampleForm2" 
-					name="ERF"
-					class="form-control mb-2">
-				</tr>
 				<tr>
 					<label for="exampleForm2">Employee ID</label>
 					<input style="width:30%" type="text" 
@@ -245,7 +135,6 @@
 						<label for="dateExample">Date Requested</label>
 						    <input style="width:30%" class="form-control" 
 						    name="dateRequested" type="date" 
-						    placeholder="mm/dd/yy"
 						    />
 						</div>
 					</tr>
@@ -253,11 +142,7 @@
 					<tr>
 						<div class="form-group">
 						<label for="dateExample">Date of Job Offered</label>
-						    <input style="width:30%" 
-						    class="form-control" 
-						    name="dateJobOffered" 
-						    type="date" 
-						    placeholder="mm/dd/yy"
+						    <input style="width:30%" class="form-control" name="dateJobOffered" type="date" 
 							 />
 						</div>			
 					</tr>
@@ -265,7 +150,7 @@
 					<tr>
 						<div class="form-group">
 							<label for="dateExample">Date of Onboarding</label>
-							    <input placeholder="mm/dd/yy" style="width:30%"t class="form-control" name="dateOnboarding" type="date"
+							    <input style="width:30%"t class="form-control" name="dateOnboarding" type="date"
 								 />
 						</div>
 					</tr>
@@ -289,7 +174,7 @@
 	    </div>
     </div>
     
-    <div style="display:none" class="step1-content" id="stepb-2-content">
+    <div style="display:inline" class="step1-content" id="stepb-2-content">
     	<div class="container">
 		    <h3 class="content-header mt-3">
 		    Employee Validation
@@ -730,8 +615,7 @@
 			</form>
 		    
 		    
-		    
-			<button onclick="showStepTwo()" class="btn btn-primary btn-sm mt-3">Next</button>
+			<%-- <button onclick="showStepTwo()" class="btn btn-primary btn-sm mt-3">Next</button> --%>
 			
 	    </div>
     </div>
@@ -761,10 +645,10 @@
 		    <p class="content-sub-h mt-3 grey-text">Assign identification card to an employee</p>
 		    <div id="container-area" class="container-area">
 			    <img src="/img/id.png" width="600" height="350"/>
-			    <div class="id-name">Lorem Ipsum Garingo</div>
-			    <div class="id-job">Full Stack Developer</div>
-			    <div class="id-emp-no">1234-456-789</div>
-			    <div class="id-hired">01-09-20</div>
+			    <div class="id-name">Lorem Ipsum Garingo${idname}</div>
+			    <div class="id-job">Full Stack Der${idjob}</div>
+			    <div class="id-emp-no">${EmpID}</div>
+			    <div class="id-hired">01-09-20 ${idtimestamp}</div>
 		    </div>
 	    </div>
 	    <div class="button-com-id">
@@ -1044,6 +928,15 @@
   <script type="text/javascript"></script>
 
   <!-- End MDB localhost -->
+	<script>
+		function show4(){
+			document.getElementById("step1-content").style.display = "none";
+			document.getElementById("step2-content").style.display = "none";
+			document.getElementById("step3-content").style.display = "none";
+			document.getElementById("stepfour-content").style.display = "inline";
+			}
+	</script>
+
 	<!-- Custom Javascript by fred -->
 	<script type="text/javascript" src="/js/main.js"></script>
 	<!-- JQuery -->

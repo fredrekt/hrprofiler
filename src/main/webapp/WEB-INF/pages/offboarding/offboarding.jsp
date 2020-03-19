@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -87,20 +89,34 @@
 			  </div>
 			</div>
 		</div>
-		
+		<form method="POST" action="/submit-offboarding">
 		<!-- Stepper Content Starts -->
 		<div style="display:inline" id="stepper1">
 			<div class="container mt-3">
 				<div class="jumbotron jumbotron-fluid">
 		          <div class="container">
-		            <h2 class="offboard-header">Employee Resignation Letter</h2>
+		            <h2 class="offboard-header">Employee Resignation Process</h2>
 		            <p id="txt-letter" class="content-sub-h grey-text">
 		            For the employee to write the letter addressing the company to retire
 		            </p>
-		            
+		            <label class="grey-text" for="EmpIdd">Choose an employee to offboard</label>
+		           <form action="#" method="POST">
+		           <select id="empidd" name="EmpID" class="browser-default custom-select mt-2 mb-3">
+					  <option selected>Select an employee to begin offboarding</option>
+					 <c:forEach items="${employees }" var="emp">
+					  <option value="${emp.getEmpID()}">${emp.getLastName()}, ${emp.getFirstName()}</option>
+					 </c:forEach>
+					</select>
+					
+					</form>
 		            <div id="letter-area">
 			            <div class="form-group">
-						  <textarea style="height:500px;" class="form-control" id="exampleFormControlTextarea3" rows="7"></textarea>
+						  <textarea 
+						  style="height:500px;" 
+						  class="form-control" 
+						  name="letter"
+						  id="exampleFormControlTextarea3" 
+						  rows="7"></textarea>
 						</div>
 					</div>
 					
@@ -117,12 +133,12 @@
 						</div>
 					</div>
 					
-					<div class="custom-control custom-switch ml-2 mt-2">
+					<div hidden class="custom-control custom-switch ml-2 mt-2">
 					  <input type="checkbox" class="custom-control-input" id="customSwitches" onclick="showLetterOptions()">
 					  <label id="txt-label-letter" class="custom-control-label" for="customSwitches">Already have a letter?</label>
 					</div>
-					
-					<button onclick="nextStep1()" class="btn btn-md btn-primary">next</button>
+	
+					<button type="button" onclick="nextStep1()" class="btn btn-md btn-primary">next</button>
 					
 		          </div>
 		        </div>		
@@ -140,7 +156,7 @@
 		            This is a one stop process for officially firing the employee
 		            </p>
 		            
-		            <select id="selectBox" onchange="changeFunc()" class="browser-default custom-select">
+		            <select id="selectBox" class="browser-default custom-select">
 					  <option selected>Select reason for leaving</option>
 					  <option value="1">Found a better company</option>
 					  <option value="2">Not satisfied with the job</option>
@@ -150,14 +166,21 @@
 					
 					<div style="display:none" id="add-reason">
 						<div class="md-form form-sm">
-						  <input type="text" id="inputSMEx" class="form-control form-control-sm">
+						  <input type="text" 
+						  id="reasonleave" 
+						  class="form-control form-control-sm">
 						  <label for="inputSMEx">What's your reason for leaving us?</label>
 						</div>
 					</div>
 					
 					<div id="remarks-box">
 						<div class="form-group shadow-textarea mt-3 mb-3">
-						  <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="What are your thoughts that you wanted to express?"></textarea>
+						  <textarea
+						   class="form-control z-depth-1" 
+						   id="exampleFormControlTextarea6" 
+						   rows="3"
+						   name="remarks"
+						    placeholder="What are your thoughts that you wanted to express?"></textarea>
 						</div>
 					</div>
 					
@@ -168,7 +191,11 @@
 						</p>
 						
 						<div class="form-group">
-						    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+						    <input class="form-control"
+						     type="date" 
+						     value="2011-08-19" 
+						     name="exitInterview"
+						     id="example-date-input1">
 						</div>
 					</div>
 					
@@ -179,12 +206,17 @@
 						</p>
 
 						<div class="form-group">
-						    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+						    <input 
+						    class="form-control" 
+						    type="date" 
+						    value="2011-08-19" 
+						    name="clearanceSched"
+						    id="example-date-input2">
 						</div>
 						
 					</div>
 					
-					<button onclick="nextStep2()" class="btn btn-sm btn-primary">next</button>
+					<button type="button" onclick="nextStep2()" class="btn btn-sm btn-primary">next</button>
 					
 		          </div>
 		        </div>		
@@ -203,13 +235,23 @@
 		            </p>
 		            
 		            <div class="form-group">
-						    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+						    <input id="example-date-input3"
+						    class="form-control" 
+						    type="date" 
+						    name="finalPay"
+						    value="2011-08-19" 
+						    id="example-date-input">
 						</div>
 		     		
 		            
-		            <button onclick="loadsm()" class="btn btn-sm btn-success"><span id="acptbtn">All done</span></button>
+		            <button type="submit"
+		            id="buttonfinal"
+		            class="btn btn-sm btn-success"><span id="acptbtn">All done</span></button>
+		          </form>
 		          </div>
 		        </div>		
+		        
+		        
 	        </div>
         </div>
         <!-- Stepper Content Ends -->
@@ -282,7 +324,25 @@
   <script type="text/javascript"></script>
 
   <!-- End MDB localhost -->
-  
+  <script>
+  $(document).ready(function(){
+	  $("#buttonfinal").click(function(){
+	    var x = $('#empidd').val();
+	    var y = $('#exampleFormControlTextarea3').val();
+	   	var z = $('#selectBox').val();
+	    //var c = $('#reasonleave').val();
+	    var v = $('#exampleFormControlTextarea6').val();
+	    var b = $('#example-date-input1').val();
+	    var a = $('#example-date-input2').val();
+	    var n = $('#example-date-input3').val();
+	    var xy = JSON.stringify({empid: x, letter: y, reason:z, remarks: v , exit:b, clearance: a, finalpay: n})
+		
+		alert(xy)
+		    
+	  });
+	});
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

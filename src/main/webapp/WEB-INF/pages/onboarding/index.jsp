@@ -115,7 +115,7 @@
 			  <hr class="my-4">
 			  <p class="text-center">This feature helps the employee updates his/her information on the companys employee records.</p>
 			  <div class="text-center">
-			  	<a class="btn btn-primary btn-lg" href="/emp-update" role="button">Update information</a>
+			  	<a class="btn btn-primary btn-lg" href="/employee/update-information" role="button">Update information</a>
 			  </div>
 			</div>
 		</div>
@@ -200,7 +200,7 @@
 		      <!-- Content -->
 		      <h2 class="card-title h2 my-4 py-2 animated shake slow infinite">EMPLOYEE OFFBOARDING</h2>
 		      <p class="mb-4 pb-2 px-md-5 mx-md-5">Where the admin submits a request to offboard an employee, basically means to get the employee ready for discharge or out of work or to be fired from the company.</p>
-		      <a href="/offboarding" style="color:white;" class="btn btn-outline-white waves-effect"><i class="fas fa-clone left"></i> FIRE EMPLOYEES</a>
+		      <a href="/employee/offboarding" style="color:white;" class="btn btn-outline-white waves-effect"><i class="fas fa-clone left"></i> FIRE EMPLOYEES</a>
 		
 		    </div>
 		  </div>
@@ -266,10 +266,12 @@
       <div class="col-md-6 mt-md-0 mt-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
-          repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
-          harum esse fugiat. Itaque, culpa?</p>
+        <h5 class="text-uppercase font-weight-bold">Front-end made by</h5>
+        <p>
+        	<a style="font-weight:800" href="https://github.com/fredrekt?tab=repositories">Fred Garingo</a>
+        	 , developer of the front-end and my features; Employee Onboarding - Training & Orientation, Company Identification, Bank Account and 
+        	 lastly Deployment to Operation.
+        </p>
 
       </div>
       <!-- Grid column -->
@@ -280,10 +282,10 @@
       <div class="col-md-6 mb-md-0 mb-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
-          commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
-          excepturi hic.</p>
+        <h5 class="text-uppercase font-weight-bold">Material Design Bootstrap</h5>
+        <p>
+        Used material design for bootstrap, and of course custom made classes and functions for the frontend made by Me, <a href="https://www.facebook.com/fredgaringo">Fred Garingo</a>
+        </p>
 
       </div>
       <!-- Grid column -->
@@ -306,6 +308,11 @@
 
  <!-- jQuery -->
  
+ <!-- 
+	Developer Details: 
+	Name: Fredrick Garingo
+	Quote: ReactJS is better <3 
+  -->
    <!-- MDB - localhost -->
   <script type="text/javascript" src="http://localhost:8020/js/jquery.min.js"></script>
   <!-- Bootstrap tooltips -->
